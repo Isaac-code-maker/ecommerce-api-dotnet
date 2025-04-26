@@ -14,9 +14,57 @@ public class ProductsController : ControllerBase {
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll() {
-        var products = await _productRepository.GetAllAsync();
-        return Ok(products);
+    public async Task<IActionResult> GetAll(
+        [FromQuery] string? name, // Filtragem por nome
+        [FromQuery] decimal? minPrice, // Filtragem por preço mínimo
+        [FromQuery] decimal? maxPrice, // Filtragem por preço máximo
+        [FromQuery] int page = 1, // Número da página
+        [FromQuery] int pageSize = 10, // Tamanho da página
+        [FromQuery] string? sort = "name", // Campo para ordenação
+        [FromQuery] string? order = "asc") // Ordem (ascendente ou descendente)
+    {
+        // Obter todos os produtos
+        var query = (await _productRepository.GetAllAsync()).AsQueryable();
+
+        // Filtragem por nome
+        if (!string.IsNullOrEmpty(name))
+        {
+            query = query.Where(p => p.Name.Contains(name, StringComparison.OrdinalIgnoreCase));
+        }
+
+        // Filtragem por faixa de preço
+        if (minPrice.HasValue)
+        {
+            query = query.Where(p => p.Price >= minPrice.Value);
+        }
+        if (maxPrice.HasValue)
+        {
+            query = query.Where(p => p.Price <= maxPrice.Value);
+        }
+
+        // Ordenação
+        query = sort.ToLower() switch
+        {
+            "name" => order.ToLower() == "desc" ? query.OrderByDescending(p => p.Name) : query.OrderBy(p => p.Name),
+            "price" => order.ToLower() == "desc" ? query.OrderByDescending(p => p.Price) : query.OrderBy(p => p.Price),
+            _ => query // Sem ordenação adicional
+        };
+
+        // Paginação
+        var totalItems = query.Count();
+        var products = query
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+
+        // Retornar os resultados com metadados
+        return Ok(new
+        {
+            TotalItems = totalItems,
+            Page = page,
+            PageSize = pageSize,
+            Data = products
+        });
     }
 
     [HttpGet("{id}")]

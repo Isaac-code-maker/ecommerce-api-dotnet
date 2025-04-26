@@ -14,9 +14,45 @@ public class CustomersController : ControllerBase {
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll() {
-        var customers = await _customerRepository.GetAllAsync();
-        return Ok(customers);
+    public async Task<IActionResult> GetAll(
+        [FromQuery] string? name, // Filtragem por nome
+        [FromQuery] int page = 1, // Número da página
+        [FromQuery] int pageSize = 10, // Tamanho da página
+        [FromQuery] string? sort = "name", // Campo para ordenação
+        [FromQuery] string? order = "asc") // Ordem (ascendente ou descendente)
+    {
+        // Obter todos os clientes
+        var query = (await _customerRepository.GetAllAsync()).AsQueryable();
+
+        // Filtragem por nome
+        if (!string.IsNullOrEmpty(name))
+        {
+            query = query.Where(c => c.Name.Contains(name, StringComparison.OrdinalIgnoreCase));
+        }
+
+        // Ordenação
+        query = sort.ToLower() switch
+        {
+            "name" => order.ToLower() == "desc" ? query.OrderByDescending(c => c.Name) : query.OrderBy(c => c.Name),
+            "email" => order.ToLower() == "desc" ? query.OrderByDescending(c => c.Email) : query.OrderBy(c => c.Email),
+            _ => query // Sem ordenação adicional
+        };
+
+        // Paginação
+        var totalItems = query.Count();
+        var customers = query
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+
+        // Retornar os resultados com metadados
+        return Ok(new
+        {
+            TotalItems = totalItems,
+            Page = page,
+            PageSize = pageSize,
+            Data = customers
+        });
     }
 
     [HttpGet("{id}")]
