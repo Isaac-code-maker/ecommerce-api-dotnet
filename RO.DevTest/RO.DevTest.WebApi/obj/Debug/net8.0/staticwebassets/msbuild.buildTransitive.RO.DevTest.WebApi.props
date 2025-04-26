@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\RO.DevTest.WebApi.props" />
-</Project>
