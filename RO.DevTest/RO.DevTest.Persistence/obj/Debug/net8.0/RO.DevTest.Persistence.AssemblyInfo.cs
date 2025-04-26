@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RO.DevTest.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+588084a7a6bb197327f45d4f863504c4bc7dfe81")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6391be80c615a70d0addc1e11384179d7d153a30")]
 [assembly: System.Reflection.AssemblyProductAttribute("RO.DevTest.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RO.DevTest.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
