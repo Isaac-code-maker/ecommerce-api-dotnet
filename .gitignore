@@ -1,0 +1,15 @@
+# Ignore arquivos gerados pelo build
+bin/
+obj/
+
+# Ignore arquivos temporários
+*.cache
+*.pdb
+*.dll
+*.sourcelink.json
+*.runtimeconfig.cache
+*.Up2Date
+*.FileListAbsolute.txt
+*.CoreCompileInputs.cache
+*.AssemblyReference.cache
+*.AssemblyInfoInputs.cache
