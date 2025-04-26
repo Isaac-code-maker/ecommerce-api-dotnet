@@ -1,0 +1,534 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Tests\\RO.DevTest.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Application\\RO.DevTest.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Application\\RO.DevTest.Application.csproj",
+        "projectName": "RO.DevTest.Application",
+        "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Application\\RO.DevTest.Application.csproj",
+        "packagesPath": "C:\\Users\\playe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\playe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Domain\\RO.DevTest.Domain.csproj": {
+                "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Domain\\RO.DevTest.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.11.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Domain\\RO.DevTest.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Domain\\RO.DevTest.Domain.csproj",
+        "projectName": "RO.DevTest.Domain",
+        "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Domain\\RO.DevTest.Domain.csproj",
+        "packagesPath": "C:\\Users\\playe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\playe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.11.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Infrastructure\\RO.DevTest.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Infrastructure\\RO.DevTest.Infrastructure.csproj",
+        "projectName": "RO.DevTest.Infrastructure",
+        "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Infrastructure\\RO.DevTest.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\playe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\playe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Application\\RO.DevTest.Application.csproj": {
+                "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Application\\RO.DevTest.Application.csproj"
+              },
+              "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Domain\\RO.DevTest.Domain.csproj": {
+                "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Domain\\RO.DevTest.Domain.csproj"
+              },
+              "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Persistence\\RO.DevTest.Persistence.csproj": {
+                "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Persistence\\RO.DevTest.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.3.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Persistence\\RO.DevTest.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Persistence\\RO.DevTest.Persistence.csproj",
+        "projectName": "RO.DevTest.Persistence",
+        "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Persistence\\RO.DevTest.Persistence.csproj",
+        "packagesPath": "C:\\Users\\playe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Persistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\playe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Application\\RO.DevTest.Application.csproj": {
+                "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Application\\RO.DevTest.Application.csproj"
+              },
+              "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Domain\\RO.DevTest.Domain.csproj": {
+                "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Domain\\RO.DevTest.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.3.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Tests\\RO.DevTest.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Tests\\RO.DevTest.Tests.csproj",
+        "projectName": "RO.DevTest.Tests",
+        "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Tests\\RO.DevTest.Tests.csproj",
+        "packagesPath": "C:\\Users\\playe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\playe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Application\\RO.DevTest.Application.csproj": {
+                "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Application\\RO.DevTest.Application.csproj"
+              },
+              "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Domain\\RO.DevTest.Domain.csproj": {
+                "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Domain\\RO.DevTest.Domain.csproj"
+              },
+              "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Infrastructure\\RO.DevTest.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Infrastructure\\RO.DevTest.Infrastructure.csproj"
+              },
+              "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Persistence\\RO.DevTest.Persistence.csproj": {
+                "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Persistence\\RO.DevTest.Persistence.csproj"
+              },
+              "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.WebApi\\RO.DevTest.WebApi.csproj": {
+                "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.WebApi\\RO.DevTest.WebApi.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoFixture.Xunit2": {
+              "target": "Package",
+              "version": "[4.18.1, )"
+            },
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.6.2, )"
+            },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[8.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.8.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
+            },
+            "Moq.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.1.7, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.WebApi\\RO.DevTest.WebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.WebApi\\RO.DevTest.WebApi.csproj",
+        "projectName": "RO.DevTest.WebApi",
+        "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.WebApi\\RO.DevTest.WebApi.csproj",
+        "packagesPath": "C:\\Users\\playe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.WebApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\playe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Application\\RO.DevTest.Application.csproj": {
+                "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Application\\RO.DevTest.Application.csproj"
+              },
+              "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Infrastructure\\RO.DevTest.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Infrastructure\\RO.DevTest.Infrastructure.csproj"
+              },
+              "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Persistence\\RO.DevTest.Persistence.csproj": {
+                "projectPath": "C:\\Users\\playe\\OneDrive\\Documentos\\GitHub\\ecommerce-api-dotnet\\RO.DevTest\\RO.DevTest.Persistence\\RO.DevTest.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "NSwag.AspNetCore": {
+              "target": "Package",
+              "version": "[14.3.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
