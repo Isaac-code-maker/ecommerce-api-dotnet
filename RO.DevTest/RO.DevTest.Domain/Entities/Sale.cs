@@ -7,7 +7,5 @@ public class Sale
     public Guid ProductId { get; set; }
     public int Quantity { get; set; }
     public decimal TotalPrice { get; set; }
-
-    // Adicionando a propriedade Date
-    public DateTime Date { get; set; } = DateTime.UtcNow; // Define a data atual como padrão
+    public DateTime Date { get; set; } // Adicionada a propriedade Date
 }

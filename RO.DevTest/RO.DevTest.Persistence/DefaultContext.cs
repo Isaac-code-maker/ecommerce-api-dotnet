@@ -4,16 +4,21 @@ using RO.DevTest.Domain.Entities;
 
 namespace RO.DevTest.Persistence;
 
-public class DefaultContext : IdentityDbContext<User> {
+public class DefaultContext : IdentityDbContext<User>
+{
+    public DefaultContext(DbContextOptions<DefaultContext> options) : base(options)
+    {
+    }
 
-    public DefaultContext() { }
+    // Adicione todas as entidades aqui
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Sale> Sales { get; set; }
+    public DbSet<Customer> Customers { get; set; }
 
-    public DefaultContext(DbContextOptions<DefaultContext> options) : base(options) { }
-
-    protected override void OnModelCreating(ModelBuilder builder) {
-        builder.HasPostgresExtension("uuid-ossp");
-        builder.ApplyConfigurationsFromAssembly(typeof(DefaultContext).Assembly);
-
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
         base.OnModelCreating(builder);
+
+        // Configurações adicionais, se necessário
     }
 }
