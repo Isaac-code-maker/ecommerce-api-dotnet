@@ -1,19 +1,23 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using RO.DevTest.Domain.Entities;
 
-namespace RO.DevTest.Persistence;
-
-public class DefaultContext : IdentityDbContext<User> {
-
-    public DefaultContext() { }
-
+public class DefaultContext : DbContext
+{
     public DefaultContext(DbContextOptions<DefaultContext> options) : base(options) { }
 
-    protected override void OnModelCreating(ModelBuilder builder) {
-        builder.HasPostgresExtension("uuid-ossp");
-        builder.ApplyConfigurationsFromAssembly(typeof(DefaultContext).Assembly);
+    public DbSet<User> Users { get; set; }
+    public DbSet<Sale> Sales { get; set; }
+    public DbSet<Product> Products { get; set; }
 
-        base.OnModelCreating(builder);
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        // Configuração do relacionamento entre Sale e Product
+        modelBuilder.Entity<Sale>()
+            .HasOne<User>()
+            .WithMany()
+            .HasForeignKey(s => s.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

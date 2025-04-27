@@ -1,12 +1,17 @@
-/RO.DevTest/RO.DevTest.Application/obj/
-/RO.DevTest/RO.DevTest.Domain/obj/
-/RO.DevTest/RO.DevTest.Persistence/obj/
-/RO.DevTest/RO.DevTest.Tests/obj/
-/RO.DevTest/RO.DevTest.WebApi/obj/
-/RO.DevTest/RO.DevTest.Infrastructure/obj/
-/RO.DevTest/RO.DevTest.Application/bin/
-/RO.DevTest/RO.DevTest.Domain/bin/
-/RO.DevTest/RO.DevTest.Persistence/bin/
-/RO.DevTest/RO.DevTest.Tests/bin/
-/RO.DevTest/RO.DevTest.WebApi/bin/
-/RO.DevTest/RO.DevTest.Infrastructure/bin/
+# Ignore arquivos gerados pelo build
+bin/
+obj/
+
+# Ignore arquivos temporários
+*.cache
+*.pdb
+*.dll
+*.sourcelink.json
+*.runtimeconfig.cache
+*.Up2Date
+*.FileListAbsolute.txt
+*.CoreCompileInputs.cache
+*.AssemblyReference.cache
+*.AssemblyInfoInputs.cache
+*.cache
+obj/

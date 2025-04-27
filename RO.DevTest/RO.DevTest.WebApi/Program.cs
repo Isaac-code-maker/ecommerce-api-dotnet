@@ -1,43 +1,50 @@
-using RO.DevTest.Application;
-using RO.DevTest.Infrastructure.IoC;
-using RO.DevTest.Persistence.IoC;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using RO.DevTest.Domain.Entities;
+using RO.DevTest.Persistence;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using RO.DevTest.Application.Contracts.Persistence.Repositories;
+using RO.DevTest.Persistence.Repositories;
 
-namespace RO.DevTest.WebApi;
+var builder = WebApplication.CreateBuilder(args);
 
-public class Program {
-    public static void Main(string[] args) {
-        var builder = WebApplication.CreateBuilder(args);
+// Configurar o banco de dados
+builder.Services.AddDbContext<DefaultContext>(options =>
+    options.UseInMemoryDatabase("DefaultDatabase")); // UseInMemoryDatabase para testes
 
-        builder.Services.AddControllers();
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+// Configurar Identity
+builder.Services.AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<DefaultContext>()
+    .AddDefaultTokenProviders();
 
-        builder.Services.InjectPersistenceDependencies()
-            .InjectInfrastructureDependencies();
-
-        // Add Mediatr to program
-        builder.Services.AddMediatR(cfg =>
+// Configurar autenticação JWT
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
         {
-            cfg.RegisterServicesFromAssemblies(
-                typeof(ApplicationLayer).Assembly,
-                typeof(Program).Assembly
-            );
-        });
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? throw new InvalidOperationException("JWT Key is not configured.")))
+        };
+    });
 
-        var app = builder.Build();
+// Adicionar serviços de controladores
+builder.Services.AddControllers();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
-        // Configure the HTTP request pipeline.
-        if(app.Environment.IsDevelopment()) {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
+var app = builder.Build();
 
-        app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
 
-        app.UseAuthorization();
+app.MapControllers();
 
-        app.MapControllers();
-
-        app.Run();
-    }
-}
+app.Run();

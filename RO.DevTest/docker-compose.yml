@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80" # Mapeia a porta 80 do contêiner para a porta 8080 do host
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
