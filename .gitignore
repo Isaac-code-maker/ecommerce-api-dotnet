@@ -13,3 +13,5 @@ obj/
 *.CoreCompileInputs.cache
 *.AssemblyReference.cache
 *.AssemblyInfoInputs.cache
+*.cache
+obj/

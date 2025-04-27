@@ -1,23 +1,16 @@
 ﻿using FluentValidation;
+using RO.DevTest.Application.Features.User.Commands.CreateUserCommand; // Adicione esta linha
 
-namespace RO.DevTest.Application.Features.User.Commands.CreateUserCommand;
-public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>{
-    public CreateUserCommandValidator() {
-        RuleFor(cpau => cpau.Email)
-            .NotNull()
-            .NotEmpty()
-            .WithMessage("O campo e-mail precisa ser preenchido");
-
-        RuleFor(cpau => cpau.Email)
-            .EmailAddress()
-            .WithMessage("O campo e-mail precisa ser um e-mail válido");
-
-        RuleFor(cpau => cpau.Password)
-            .MinimumLength(6)
-            .WithMessage("O campo senha precisa ter, pelo menos, 6 caracteres");
-
-        RuleFor(cpau => cpau.PasswordConfirmation)
-            .Matches(cpau => cpau.Password)
-            .WithMessage("O campo de confirmação de senha deve ser igual ao campo senha");
+public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
+{
+    public CreateUserCommandValidator()
+    {
+        RuleFor(x => x.UserName).NotEmpty().WithMessage("O nome de usuário é obrigatório.");
+        RuleFor(x => x.Email).NotEmpty().EmailAddress().WithMessage("O e-mail é obrigatório e deve ser válido.");
+        RuleFor(x => x.Password).NotEmpty().WithMessage("A senha é obrigatória.");
+        RuleFor(x => x.PasswordConfirmation)
+            .Equal(x => x.Password)
+            .WithMessage("A confirmação de senha deve corresponder à senha.");
+        RuleFor(x => x.Role).NotEmpty().WithMessage("O role é obrigatório.");
     }
 }
