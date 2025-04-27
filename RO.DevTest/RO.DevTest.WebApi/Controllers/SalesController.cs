@@ -91,4 +91,36 @@ public class SalesController : ControllerBase {
 
         return CreatedAtAction(nameof(GetAll), new { id = sale.Id }, sale);
     }
+
+    [Authorize]
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(Guid id, [FromBody] Sale updatedSale)
+    {
+        var sale = await _saleRepository.GetByIdAsync(id);
+        if (sale == null)
+        {
+            return NotFound("Venda não encontrada.");
+        }
+
+        // Atualizar os campos da venda
+        sale.Quantity = updatedSale.Quantity > 0 ? updatedSale.Quantity : sale.Quantity;
+        sale.TotalPrice = updatedSale.TotalPrice > 0 ? updatedSale.TotalPrice : sale.TotalPrice;
+
+        await _saleRepository.UpdateAsync(sale);
+        return NoContent();
+    }
+
+    [Authorize]
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(Guid id)
+    {
+        var sale = await _saleRepository.GetByIdAsync(id);
+        if (sale == null)
+        {
+            return NotFound("Venda não encontrada.");
+        }
+
+        await _saleRepository.DeleteAsync(id);
+        return NoContent();
+    }
 }
