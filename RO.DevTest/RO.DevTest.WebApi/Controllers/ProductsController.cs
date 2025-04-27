@@ -103,8 +103,7 @@ public class ProductsController : ControllerBase {
         }
 
         // Agora é seguro acessar as propriedades de 'product'
-        product.Name = updatedProduct.Name ?? product.Name;
-        product.Price = updatedProduct.Price > 0 ? updatedProduct.Price : product.Price;
+        product.Name = updatedProduct.Name;
 
         await _productRepository.UpdateAsync(product);
         return NoContent();

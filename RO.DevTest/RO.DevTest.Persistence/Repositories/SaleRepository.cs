@@ -16,7 +16,9 @@ public class SaleRepository : ISaleRepository
 
     public async Task<IEnumerable<Sale>> GetAllAsync()
     {
-        return await _context.Sales.ToListAsync(); // Certifique-se de que ToListAsync está correto
+        return await _context.Sales
+            .Include(s => s.Product) // Inclui informações do produto, se necessário
+            .ToListAsync();
     }
 
     public async Task<Sale?> GetByIdAsync(Guid id)

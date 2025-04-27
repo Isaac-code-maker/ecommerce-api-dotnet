@@ -7,11 +7,13 @@ namespace RO.DevTest.WebApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class SalesController : ControllerBase {
+public class SalesController : ControllerBase
+{
     private readonly ISaleRepository _saleRepository;
     private readonly IProductRepository _productRepository;
 
-    public SalesController(ISaleRepository saleRepository, IProductRepository productRepository) {
+    public SalesController(ISaleRepository saleRepository, IProductRepository productRepository)
+    {
         _saleRepository = saleRepository;
         _productRepository = productRepository;
     }
@@ -28,12 +30,6 @@ public class SalesController : ControllerBase {
         [FromQuery] string? order = "asc")
     {
         var query = (await _saleRepository.GetAllAsync()).AsQueryable();
-
-        // Filtragem por cliente
-        if (customerId.HasValue)
-        {
-            query = query.Where(s => s.CustomerId == customerId.Value);
-        }
 
         // Filtragem por produto
         if (productId.HasValue)
@@ -79,8 +75,9 @@ public class SalesController : ControllerBase {
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] Sale sale) {
         var product = await _productRepository.GetByIdAsync(sale.ProductId);
-        if (product == null || product.Stock < sale.Quantity) {
-            return BadRequest("Produto não disponível ou estoque insuficiente.");
+        if (product == null)
+        {
+            return BadRequest("Produto não encontrado.");
         }
 
         sale.TotalPrice = product.Price * sale.Quantity;
@@ -102,8 +99,11 @@ public class SalesController : ControllerBase {
             return NotFound("Venda não encontrada.");
         }
 
-        // Atualizar os campos da venda
-        sale.Quantity = updatedSale.Quantity > 0 ? updatedSale.Quantity : sale.Quantity;
+        if (updatedSale == null)
+        {
+            return BadRequest("Dados da venda não fornecidos.");
+        }
+
         sale.TotalPrice = updatedSale.TotalPrice > 0 ? updatedSale.TotalPrice : sale.TotalPrice;
 
         await _saleRepository.UpdateAsync(sale);
@@ -122,5 +122,30 @@ public class SalesController : ControllerBase {
 
         await _saleRepository.DeleteAsync(id);
         return NoContent();
+    }
+
+    [Authorize]
+    [HttpGet("analysis")]
+    public async Task<IActionResult> GetSalesAnalysis([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
+    {
+        var sales = await _saleRepository.GetAllAsync();
+        var filteredSales = sales.Where(s => s.Date >= startDate && s.Date <= endDate);
+
+        var totalSales = filteredSales.Count();
+        var totalRevenue = filteredSales.Sum(s => s.TotalPrice);
+        var revenueByProduct = filteredSales
+            .GroupBy(s => s.ProductId)
+            .Select(g => new
+            {
+                ProductId = g.Key,
+                Revenue = g.Sum(s => s.TotalPrice)
+            });
+
+        return Ok(new
+        {
+            TotalSales = totalSales,
+            TotalRevenue = totalRevenue,
+            RevenueByProduct = revenueByProduct
+        });
     }
 }

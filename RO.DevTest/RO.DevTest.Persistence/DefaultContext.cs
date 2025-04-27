@@ -1,24 +1,23 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using RO.DevTest.Domain.Entities;
 
-namespace RO.DevTest.Persistence;
-
-public class DefaultContext : IdentityDbContext<User>
+public class DefaultContext : DbContext
 {
-    public DefaultContext(DbContextOptions<DefaultContext> options) : base(options)
-    {
-    }
+    public DefaultContext(DbContextOptions<DefaultContext> options) : base(options) { }
 
-    // Adicione todas as entidades aqui
-    public DbSet<Product> Products { get; set; }
-    public DbSet<Sale> Sales { get; set; }
     public DbSet<User> Users { get; set; }
+    public DbSet<Sale> Sales { get; set; }
+    public DbSet<Product> Products { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder builder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(builder);
+        base.OnModelCreating(modelBuilder);
 
-        // Configurações adicionais, se necessário
+        // Configuração do relacionamento entre Sale e Product
+        modelBuilder.Entity<Sale>()
+            .HasOne<User>()
+            .WithMany()
+            .HasForeignKey(s => s.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }
