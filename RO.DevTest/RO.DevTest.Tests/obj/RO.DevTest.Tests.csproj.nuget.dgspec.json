@@ -484,18 +484,24 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+<<<<<<< HEAD
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.4, )"
             },
+=======
+>>>>>>> 40cc55bcc18baa7634aa81f41ffd93163d017bf8
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[8.0.6, )"
             },
+<<<<<<< HEAD
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.4, )"
             },
+=======
+>>>>>>> 40cc55bcc18baa7634aa81f41ffd93163d017bf8
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -506,6 +512,7 @@
               "target": "Package",
               "version": "[9.0.4, )"
             },
+<<<<<<< HEAD
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[9.0.4, )"
@@ -514,6 +521,8 @@
               "target": "Package",
               "version": "[8.9.0, )"
             },
+=======
+>>>>>>> 40cc55bcc18baa7634aa81f41ffd93163d017bf8
             "NSwag.AspNetCore": {
               "target": "Package",
               "version": "[14.3.0, )"
@@ -521,10 +530,13 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+<<<<<<< HEAD
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[8.9.0, )"
+=======
+>>>>>>> 40cc55bcc18baa7634aa81f41ffd93163d017bf8
             }
           },
           "imports": [

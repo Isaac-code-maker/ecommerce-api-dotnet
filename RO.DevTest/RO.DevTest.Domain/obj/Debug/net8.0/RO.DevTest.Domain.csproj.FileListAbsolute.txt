@@ -1,0 +1,13 @@
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Domain\bin\Debug\net8.0\RO.DevTest.Domain.deps.json
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Domain\bin\Debug\net8.0\RO.DevTest.Domain.dll
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Domain\bin\Debug\net8.0\RO.DevTest.Domain.pdb
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Domain\obj\Debug\net8.0\RO.DevTest.Domain.csproj.AssemblyReference.cache
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Domain\obj\Debug\net8.0\RO.DevTest.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Domain\obj\Debug\net8.0\RO.DevTest.Domain.AssemblyInfoInputs.cache
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Domain\obj\Debug\net8.0\RO.DevTest.Domain.AssemblyInfo.cs
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Domain\obj\Debug\net8.0\RO.DevTest.Domain.csproj.CoreCompileInputs.cache
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Domain\obj\Debug\net8.0\RO.DevTest.Domain.sourcelink.json
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Domain\obj\Debug\net8.0\RO.DevTest.Domain.dll
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Domain\obj\Debug\net8.0\refint\RO.DevTest.Domain.dll
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Domain\obj\Debug\net8.0\RO.DevTest.Domain.pdb
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Domain\obj\Debug\net8.0\ref\RO.DevTest.Domain.dll

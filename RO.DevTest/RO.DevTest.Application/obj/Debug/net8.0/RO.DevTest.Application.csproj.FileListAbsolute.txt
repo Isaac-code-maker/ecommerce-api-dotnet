@@ -1,0 +1,16 @@
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\bin\Debug\net8.0\RO.DevTest.Application.deps.json
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\bin\Debug\net8.0\RO.DevTest.Application.dll
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\bin\Debug\net8.0\RO.DevTest.Application.pdb
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\bin\Debug\net8.0\RO.DevTest.Domain.dll
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\bin\Debug\net8.0\RO.DevTest.Domain.pdb
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\obj\Debug\net8.0\RO.DevTest.Application.csproj.AssemblyReference.cache
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\obj\Debug\net8.0\RO.DevTest.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\obj\Debug\net8.0\RO.DevTest.Application.AssemblyInfoInputs.cache
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\obj\Debug\net8.0\RO.DevTest.Application.AssemblyInfo.cs
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\obj\Debug\net8.0\RO.DevTest.Application.csproj.CoreCompileInputs.cache
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\obj\Debug\net8.0\RO.DevTest.Application.sourcelink.json
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\obj\Debug\net8.0\RO.DevTe.B14B08A2.Up2Date
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\obj\Debug\net8.0\RO.DevTest.Application.dll
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\obj\Debug\net8.0\refint\RO.DevTest.Application.dll
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\obj\Debug\net8.0\RO.DevTest.Application.pdb
+C:\Users\playe\OneDrive\Documentos\GitHub\ecommerce-api-dotnet\RO.DevTest\RO.DevTest.Application\obj\Debug\net8.0\ref\RO.DevTest.Application.dll
