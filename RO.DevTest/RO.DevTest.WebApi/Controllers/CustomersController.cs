@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RO.DevTest.Application.Contracts.Persistence.Repositories;
 using RO.DevTest.Domain.Entities;
@@ -56,25 +57,43 @@ public class CustomersController : ControllerBase {
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(Guid id) {
+    public async Task<IActionResult> GetById(Guid id)
+    {
         var customer = await _customerRepository.GetByIdAsync(id);
-        if (customer == null) return NotFound();
+        if (customer == null)
+        {
+            return NotFound("Cliente não encontrado.");
+        }
+
         return Ok(customer);
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] Customer customer) {
         await _customerRepository.AddAsync(customer);
         return CreatedAtAction(nameof(GetById), new { id = customer.Id }, customer);
     }
 
+    [Authorize]
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(Guid id, [FromBody] Customer customer) {
-        if (id != customer.Id) return BadRequest();
+    public async Task<IActionResult> Update(Guid id, [FromBody] Customer updatedCustomer)
+    {
+        var customer = await _customerRepository.GetByIdAsync(id);
+        if (customer == null)
+        {
+            return NotFound("Cliente não encontrado.");
+        }
+
+        // Agora é seguro acessar as propriedades de 'customer'
+        customer.Name = updatedCustomer.Name ?? customer.Name;
+        customer.Email = updatedCustomer.Email ?? customer.Email;
+
         await _customerRepository.UpdateAsync(customer);
         return NoContent();
     }
 
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id) {
         await _customerRepository.DeleteAsync(id);

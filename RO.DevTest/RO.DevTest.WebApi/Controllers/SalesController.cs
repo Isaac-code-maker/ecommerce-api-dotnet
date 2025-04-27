@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RO.DevTest.Application.Contracts.Persistence.Repositories;
 using RO.DevTest.Domain.Entities;
@@ -74,6 +75,7 @@ public class SalesController : ControllerBase {
         });
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] Sale sale) {
         var product = await _productRepository.GetByIdAsync(sale.ProductId);

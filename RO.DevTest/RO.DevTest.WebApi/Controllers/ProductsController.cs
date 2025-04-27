@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RO.DevTest.Application.Contracts.Persistence.Repositories;
 using RO.DevTest.Domain.Entities;
@@ -68,25 +69,48 @@ public class ProductsController : ControllerBase {
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(Guid id) {
+    public async Task<IActionResult> GetById(Guid id)
+    {
         var product = await _productRepository.GetByIdAsync(id);
-        if (product == null) return NotFound();
+        if (product == null)
+        {
+            return NotFound("Produto não encontrado.");
+        }
+
         return Ok(product);
     }
 
+    [Authorize]
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] Product product) {
+    public async Task<IActionResult> Create([FromBody] Product product)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
         await _productRepository.AddAsync(product);
         return CreatedAtAction(nameof(GetById), new { id = product.Id }, product);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(Guid id, [FromBody] Product product) {
-        if (id != product.Id) return BadRequest();
+    public async Task<IActionResult> Update(Guid id, [FromBody] Product updatedProduct)
+    {
+        var product = await _productRepository.GetByIdAsync(id);
+        if (product == null)
+        {
+            return NotFound("Produto não encontrado.");
+        }
+
+        // Agora é seguro acessar as propriedades de 'product'
+        product.Name = updatedProduct.Name ?? product.Name;
+        product.Price = updatedProduct.Price > 0 ? updatedProduct.Price : product.Price;
+
         await _productRepository.UpdateAsync(product);
         return NoContent();
     }
 
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id) {
         await _productRepository.DeleteAsync(id);
